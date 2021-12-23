@@ -1,0 +1,66 @@
+{
+renderflags {clear "constellations|comettails|boundaries"}
+renderflags {clear "pointstars|galaxies|markers"}
+renderflags {set "orbits|cloudmaps|eclipseshadows|atmospheres|nightmaps"}
+labels {clear "stars|galaxies|spacecraft"}
+labels {set "planets|moons|minormoons|asteroids"}
+set {name "AmbientLightLevel" value 0.60}
+#
+#---------------------------------------------------------------------
+# Set Tour Date to 21 December 2003 at roughly 5am EST. Then, set the
+# Field of View for a 1024 x 768 display. 
+#---------------------------------------------------------------------
+#
+time {jd 2504579.22764}
+set {name "FOV" value 38.0}
+select {object "Sol/Jupiter/Lysithea"}
+center {time 4.0}
+preloadtex {object "Sol/Jupiter"}
+preloadtex {object "Sol/Jupiter/Io"}
+preloadtex {object "Sol/Jupiter/Callisto"}
+preloadtex {object "Sol/Jupiter/Ganymede"}
+preloadtex {object "Sol/Jupiter/Europa"}
+preloadtex {object "Sol/Jupiter/Amalthea"}
+#wait {duration 1.0}
+goto {time 4.0 distance 5.0}
+gotolonglat {time 6.0 distance 6.0 longitude 220 latitude -10}
+wait {duration 5.5}
+print {text "This is Lysithea, a minor moon of Jupiter. The Jovian republic habitat\nFriedman with some 15,000 souls lies under its surface." row -4 column 1 duration 7.5}
+follow {}
+timerate {rate 1.0}
+wait {duration 9.0}
+select {object "Sol/Jupiter"}
+center {time 2.0}
+goto {time 8.0 distance 12.0}
+gotolonglat {time 5.0 distance 80.0 longitude 90 latitude 50}
+wait {duration 2.0}
+print {text "The inner moons of Jupiter are the heartland of the Republic. They are\nhome to over 80% of the state's 40 million citizens and civilians." row -4 column 1 duration 8.0}
+wait {duration 6.0}
+goto {time 8.0 distance 1500.0}
+wait {duration 4.0}
+print {text "The Republic extends to the minor moons." row -4 column 1 duration 5.0}
+wait {duration 3.0}
+goto {time 8.0 distance 40000.0}
+wait {duration 3.0}
+print {text "Far from the planet, out beyond the declared space of the Republic,\nalong Jupiter's orbit lie close to a million asteroids, shown here as\nthe red clouds: the Greeks (left) and the Trojans." row -5 column 1 duration 8.5}
+wait {duration 6.0}
+gotolonglat {time 8.0 distance 40000.0 longitude 30 latitude -10}
+wait {duration 3.0}
+print {text "The Greeks and the Trojans contain numerous habitats, some allied with the Republic.\nOthers pledge for the Autonomist Alliance, the Planetary Consortium, or for no one." row -4 column 1 duration 8.0}
+wait {duration 5.0}
+#labels {clear "moons|minormoons"}
+gotolonglat {time 8.0 distance 30000.0 longitude -80 latitude -15}
+wait {duration 4.0}
+print {text "Even the closest Greeks are over 2.5 AU away from Jupiter. A fusion frigate\nthat's refueled on the way can just about reach them in two weeks.\nA fast antimatter cruiser would take just one." row -5 column 1 duration 8.0}
+wait {duration 1.0}
+labels {set "moons|minormoons"}
+goto {time 6.0 distance 5000.0}
+wait {duration 6.0}
+select {object "Sol/Jupiter/2003 J 5"}
+center {time 0.1}
+time {jd 2504579.22764}
+goto {time 8.0 distance 6.0}
+gotolonglat {time 5.0 distance 6.0 longitude 10 latitude -10}
+wait {duration 4.0}
+print {text "Miory is a tiny Jovian moon, an irregular retrograde satellite - little more than an asteroid,\nspun on its axis to provide gravity. Nonetheless, it is a full member habitat of the Republic\nand boasts a respectable 50 000 inhabitants." row -5 column 1 duration 15.0}
+}
