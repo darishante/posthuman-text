@@ -4,3 +4,5 @@
 # Ignore epbooks folder
 epbooks
 
+# Ignore temp files
+~*
